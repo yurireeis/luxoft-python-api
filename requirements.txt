@@ -1,0 +1,5 @@
+flask
+requests
+werkzeug
+Flask-RESTful
+flask-cors
