@@ -14,4 +14,4 @@ class GoogleBooksService:
         data = self.client.request('GET', current_url)
         items = data.get('items')
         if not items: return items
-        return [Book(data).json() for data in items]
+        return [Book(i, data).json() for i, data in enumerate(items)]

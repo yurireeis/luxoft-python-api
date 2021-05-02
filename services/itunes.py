@@ -14,4 +14,4 @@ class ITunesService:
         data = self.client.request('GET', current_url)
         results = data.get('results')
         if not results: return results
-        return [Album(data).json() for data in results]
+        return [Album(i, data).json() for i, data in enumerate(results)]

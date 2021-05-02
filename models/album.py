@@ -2,7 +2,8 @@ from re import split
 
 
 class Album():
-    def __init__(self, data):
+    def __init__(self, _id, data):
+        self.id=_id
         self.title=data.get('collectionName')
         self.authors=self.get_authors(data.get('artistName'))
         self.type='album'
@@ -12,4 +13,4 @@ class Album():
         return [author.strip() for author in authors]
 
     def json(self):
-        return dict(title=self.title,authors=self.authors,type=self.type)
+        return dict(id=self.id,title=self.title,authors=self.authors,type=self.type)
