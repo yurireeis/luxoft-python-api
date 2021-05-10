@@ -3,3 +3,4 @@ requests
 werkzeug
 Flask-RESTful
 flask-cors
+uwsgi
