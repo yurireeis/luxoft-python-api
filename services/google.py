@@ -13,5 +13,5 @@ class GoogleBooksService:
         current_url = self.url+'/volumes?'+'q='+term+'&maxResults='+str(limit)
         data = self.client.request('GET', current_url)
         items = data.get('items')
-        if not items: return items
+        if not items: return []
         return [Book(i, data).json() for i, data in enumerate(items)]

@@ -13,5 +13,5 @@ class ITunesService:
         current_url = self.url+'/search?'+'term='+term+'&limit='+str(limit)
         data = self.client.request('GET', current_url)
         results = data.get('results')
-        if not results: return results
+        if not results: return []
         return [Album(i, data).json() for i, data in enumerate(results)]
